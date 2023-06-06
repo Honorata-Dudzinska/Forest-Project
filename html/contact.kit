@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="pl">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Forest Group - oferta</title>
+    <link rel="shortcut icon" href="/src/img/svg/tree2.svg">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@200;300;400;700&display=swap" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/91b5efdbab.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="dist/css/main.min.css">
+</head>
+
+<body>
+    <!-- @include 'nav.kit'-->
+
+    <!-- @include 'header.kit'-->
+
+    <section class="contact wrapper" id="contact">
+        <div class="contact__info-container">
+            <div class="contact__info contact__info--location">
+                <h4>Adres:</h4>
+                <img src="./dist/img/svg/location.svg" alt="">
+                <p>Kraków</p>
+            </div>
+            <div class="contact__info contact__info--email">
+                <h4>E-mail:</h4>
+                <a class="contact-links" href="mailto:forest@forest.com"><img src="./dist/img/svg/email.svg" alt=""></a>
+                <br>
+                <a class="contact-links" href="mailto:forest@forest.com">forest@forest.com</a>
+            </div>
+            <div class="contact__info contact__info--telephone">
+                <h4>Telefon:</h4>
+                <a class="contact-links" href="tel:+48 555 444 333"><img src="./dist/img/svg/phone.svg" alt=""></a>
+                <br>
+                <a class="contact-links" href="tel:+48 555 444 333">+48 555 444 333</a>
+            </div>
+        </div>
+
+        <div class="contact__map">
+            <h2>Znajdź nas :</h2>
+            <div class="google-map"><iframe
+                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2559.8462340662313!2d19.89202277685999!3d50.089165713310884!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47165a326d015c3b%3A0x47a12cd367a1f34e!2sRestauracja%20McDonald&#39;s!5e0!3m2!1spl!2spl!4v1684419488361!5m2!1spl!2spl"
+                    width="300" height="300" style="border: solid 1px;" allowfullscreen="" loading="lazy"
+                    referrerpolicy="no-referrer-when-downgrade"></iframe></div>
+        </div>
+
+        <div class="contact__form-container">
+            <h2>Skontaktuj się z nami :</h2>
+            <form action="" class="contact__form">
+                <div class="contact__form-box">
+                    <label for="name">Imię :</label>
+                    <input type="text" id="name">
+                </div>
+                <div class="contact__form-box">
+                    <label for="mail">E-mail :</label>
+                    <input type="email" id="mail">
+                </div>
+                <div class="contact__form-box">
+                    <label for="tel">Telefon :</label>
+                    <input type="tel" id="tel">
+                </div>
+                <div class="contact__form-box">
+                    <label for="msg">Wiadomość :</label>
+                    <textarea id="msg" cols="30" rows="10"></textarea>
+                </div>
+                <button type="submit" class="contact__form-btn">Wyślij</button>
+            </form>
+        </div>
+
+    </section>
+
+    <!-- @include 'footer.kit' -->
+
+    <script src="dist/js/main.min.js"></script>
+</body>
+
+</html>

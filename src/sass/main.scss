@@ -1,0 +1,712 @@
+@import './colors';
+
+*,
+*::before,
+*::after {
+	box-sizing: border-box;
+	padding: 0;
+	margin: 0;
+}
+
+html {
+	font-size: 62.5%;
+	scroll-behavior: smooth;
+	scroll-padding-top: 80px;
+}
+
+body {
+	font-family: 'Montserrat', sans-serif;
+	font-size: 1.6rem;
+	background-color: white;
+}
+
+.wrapper {
+	margin: 0 auto;
+	width: 100%;
+	max-width: 1200px;
+}
+
+.no-scroll {
+	overflow-y: hidden;
+}
+
+a,
+a:visited {
+	text-decoration: none;
+	color: $dark-color;
+}
+
+//////////// nav //////////
+
+.brand {
+	display: flex;
+	text-align: center;
+	align-items: center;
+	text-decoration: none;
+	position: sticky;
+	padding: 1rem;
+	font-size: 3.2rem;
+
+	.fa-tree {
+		padding: 1rem;
+		vertical-align: middle;
+	}
+}
+
+.nav {
+	position: sticky;
+	text-align: center;
+	top: 0;
+	height: 8rem;
+	background-color: #fafafa;
+	z-index: 5;
+	border-bottom: 1px solid rgba($dark-color, 0.2);
+
+	.wrapper {
+		display: flex;
+	}
+
+	.burger-icon {
+		position: fixed;
+		top: 1rem;
+		right: 3rem;
+		padding: 1rem;
+		font-size: 3.6rem;
+		background: none;
+		border: none;
+		cursor: pointer;
+		color: $dark-color;
+		transition: transform, color 0.3s;
+	}
+	.burger-icon:hover {
+		color: rgb(32, 32, 32);
+		transform: scale(1.05);
+	}
+
+	.nav-items {
+		position: fixed;
+		padding-top: 30%;
+		top: 8rem;
+		height: 100vh;
+		width: 100%;
+		right: -100rem;
+		list-style: none;
+		background-color: $dark-color;
+		transition: transform 0.3s;
+
+		&__item {
+			display: block;
+			padding: 25px 10px;
+			font-size: 3rem;
+			color: $light-color;
+			text-decoration: none;
+			transition: font-weight 0.3s;
+		}
+
+		&__item:hover {
+			font-weight: bold;
+		}
+	}
+
+	.active {
+		transform: translateX(-100rem);
+	}
+}
+
+///////////////// header ///////////////
+
+.header {
+	position: relative;
+	background-image: url('../img/forest-path-small.jpg');
+	height: 33rem;
+	background-size: cover;
+	background-position: center;
+
+	.hero-text {
+		position: absolute;
+		color: $light-color;
+		top: 50%;
+		left: 10%;
+		right: 10%;
+		transform: translateY(-50%);
+
+		h1 {
+			font-size: 1.8rem;
+			font-weight: lighter;
+		}
+
+		p {
+			font-size: 2.8rem;
+			font-weight: bold;
+		}
+	}
+}
+
+.hero-bg {
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	background-color: rgba(black, 0.65);
+}
+
+////////////// o nas /////////////
+
+.section-title {
+	padding: 2rem;
+	margin-top: 3rem;
+	text-align: center;
+	text-transform: uppercase;
+	font-size: 3.2rem;
+	font-weight: 400;
+}
+.main {
+	.about-us {
+		.about-us__container {
+			position: relative;
+			display: flex;
+			flex-direction: column;
+			margin: 2rem;
+
+			&--text {
+				h3 {
+					font-size: 2rem;
+					font-weight: bold;
+					padding: 2rem 0;
+				}
+				p {
+					line-height: 1.6em;
+				}
+			}
+			&--img {
+				background-image: url('../img/lake-small.jpg');
+				background-size: cover;
+				background-position: center;
+				height: 30rem;
+				width: 100%;
+			}
+		}
+	}
+}
+
+///////////// hero img //////////////
+
+.hero-img {
+	position: relative;
+	background-image: url('../img/girl-forest-small.jpg');
+	height: 23rem;
+	background-size: cover;
+	background-position: center;
+	margin: 6rem 0;
+	.hero-bg {
+		background-color: rgba(black, 0.5);
+	}
+
+	.hero-text {
+		position: absolute;
+		top: 50%;
+		left: 50%;
+		transform: translate(-50%, -50%);
+
+		h3 {
+			color: $light-color;
+			text-align: center;
+			font-size: 2rem;
+			border: solid 1px;
+			padding: 3rem 8rem;
+		}
+	}
+}
+
+/////////////// offers /////////////
+
+.offers {
+	text-align: center;
+	p {
+		font-size: 2rem;
+		font-weight: 400;
+		margin: 0 4rem 2rem;
+	}
+	.offers-proposition {
+		padding-top: 4rem;
+		text-transform: uppercase;
+		font-weight: bold;
+		text-decoration: underline;
+	}
+	.offers__cards {
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+		align-items: center;
+		margin: 3rem;
+
+		.offers__card {
+			width: 100%;
+			border-radius: 0.8rem;
+			margin: 2rem;
+			box-shadow: 1px 0 7px $gray-color;
+
+			.card-name {
+				font-size: 2.2rem;
+				margin-top: 1rem;
+				padding: 1rem;
+			}
+			.card-price {
+				font-size: 3rem;
+				font-weight: bold;
+			}
+			ul {
+				margin: 2rem 0;
+
+				.minus {
+					color: $gray-color;
+				}
+
+				li {
+					list-style: none;
+					font-size: 1.8rem;
+					line-height: 3.5rem;
+
+					img {
+						height: 2rem;
+						width: 2rem;
+						vertical-align: middle;
+					}
+				}
+			}
+			.offers__button {
+				font-size: 1.6rem;
+				padding: 1rem 4rem;
+				margin-top: 1rem;
+				margin-bottom: 2.5rem;
+				background: none;
+				border: none;
+				border-radius: 12px;
+				box-shadow: 0 2px 6px $gray-color;
+				outline: none;
+				cursor: pointer;
+				transition: background-color 0.3s, transform 0.15s;
+			}
+			.offers__button:hover {
+				background-color: rgba($gray-color, 0.1);
+				transform: scale(1.1);
+			}
+
+			.offers__button--highlight {
+				background-color: #79e793;
+			}
+			.offers__button--highlight:hover {
+				background-color: #6dcd83;
+			}
+		}
+	}
+
+	.more-offers {
+		margin-bottom: 5rem;
+
+		a {
+			color: #79e793;
+			font-weight: bold;
+		}
+
+		a:hover {
+			color: #6dcd83;
+		}
+	}
+}
+
+//////////// contact ///////////////
+
+.contact {
+	.contact__info-container {
+		display: flex;
+		flex-direction: column;
+		justify-content: space-evenly;
+
+		.contact__info {
+			margin: 3rem;
+			text-align: center;
+
+			img {
+				padding: 1rem;
+				transition: transform 0.3s;
+			}
+
+			img:hover {
+				transform: scale(0.9);
+			}
+		}
+	}
+
+	.contact__map,
+	.contact__form-container {
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		text-align: center;
+
+		h2 {
+			margin-top: 4rem;
+			font-size: 2rem;
+		}
+
+		h4 {
+			margin-top: 3rem;
+		}
+
+		.google-map {
+			margin: 2rem 1rem 6rem;
+		}
+
+		.contact__form {
+			margin: 2rem;
+
+			.contact__form-box {
+				margin: 1rem 0;
+
+				label {
+					display: block;
+					margin-top: 0;
+					font-size: 1.8rem;
+					text-align: start;
+				}
+
+				input,
+				textarea {
+					padding: 1.2rem 2rem;
+					margin: 1.2rem 0;
+					width: 100%;
+					outline: none;
+					border: 1px solid $dark-color;
+					border-radius: 8px;
+					box-shadow: 0 2px 5px $gray-color;
+					font-size: 1.6rem;
+				}
+
+				textarea {
+					max-width: 30rem;
+					min-width: 30rem;
+				}
+			}
+		}
+
+		.contact__form-btn {
+			width: 100%;
+			margin-top: 1rem;
+			margin-bottom: 3rem;
+			padding: 1rem 6rem;
+			font-size: 1.6rem;
+			border-radius: 8px;
+			background: none;
+			border: none;
+			box-shadow: 0 2px 6px $gray-color;
+			outline: none;
+			background-color: #79e793;
+			cursor: pointer;
+			transition: background-color 0.3s;
+		}
+		.contact__form-btn:hover {
+			background-color: #6dcd83;
+		}
+	}
+}
+
+///////////// footer /////////////////
+
+.footer {
+	background-color: $light-color;
+	border-top: 1px solid rgba($dark-color, 0.2);
+
+	.footer-nav {
+		display: flex;
+		flex-direction: column;
+		padding: 1rem 0;
+
+		.brand-footer {
+			padding: 1rem;
+			margin: 0 auto;
+		}
+		.footer-items {
+			display: flex;
+			flex-direction: column;
+			text-align: center;
+			font-size: 1.3rem;
+
+			&__item {
+				margin: 1rem;
+
+				h4 {
+					font-size: 1.8rem;
+					padding-bottom: 0.5rem;
+				}
+				ul {
+					list-style: none;
+					li {
+						padding: 0.3rem 0;
+					}
+				}
+			}
+		}
+	}
+
+	.footer-signature {
+		border-top: 1px solid rgba($dark-color, 0.2);
+		font-size: 1.2rem;
+		text-align: center;
+		padding: 3rem;
+
+		.footer-text {
+			font-size: 1.4rem;
+		}
+	}
+}
+
+/////////////// media ////////////////////
+
+@media (min-width: 576px) {
+	.offers {
+		.offers__cards {
+			.offers__card {
+				width: 65%;
+			}
+		}
+	}
+}
+
+@media (min-width: 768px) {
+	.header {
+		background-image: url('../img/forest-path-big.jpg');
+
+		.hero-text {
+			h1 {
+				font-size: 2rem;
+			}
+
+			p {
+				font-size: 3.2rem;
+			}
+		}
+	}
+
+	.main {
+		.about-us {
+			.about-us__container {
+				&--img {
+					background-image: url('../img/lake-big.jpg');
+				}
+			}
+		}
+	}
+
+	.hero-img {
+		background-image: url('../img/girl-forest-big.jpg');
+
+		.hero-text {
+			h3 {
+				font-size: 2.6rem;
+				padding: 3rem 6rem;
+
+				img {
+					height: 2.2rem;
+					width: 2rem;
+				}
+			}
+		}
+	}
+
+	.offers {
+		.offers__cards {
+			.offers__card {
+				width: 50%;
+
+				ul {
+					li {
+						font-size: 2rem;
+					}
+				}
+			}
+		}
+	}
+
+	.contact {
+		.contact__info-container {
+			flex-direction: row;
+
+			.contact__info {
+				margin: 5rem;
+			}
+		}
+		.contact__map {
+			iframe {
+				width: 50rem;
+			}
+		}
+		.contact__form-container {
+			.contact__form {
+				width: 50rem;
+				.contact__form-box {
+					textarea {
+						max-width: 50rem;
+						min-width: 50rem;
+					}
+				}
+			}
+		}
+	}
+
+	.footer {
+		.footer-nav {
+			flex-direction: row;
+			justify-content: center;
+			gap: 20rem;
+
+			.brand-footer {
+				margin: 0 1rem;
+			}
+
+			.footer-items {
+				flex-direction: row;
+				text-align: left;
+
+				&__item {
+					padding: 0 1rem;
+				}
+			}
+		}
+	}
+}
+@media (min-width: 992px) {
+	.nav {
+		.wrapper {
+			.burger-icon {
+				display: none;
+			}
+
+			.nav-items {
+				position: relative;
+				background: none;
+				width: 100%;
+				height: 8rem;
+				padding-top: 0;
+				top: 0;
+				right: 0;
+				display: flex;
+				justify-content: flex-end;
+				align-items: center;
+
+				&__item {
+					height: 8rem;
+					font-size: 2rem;
+					color: $dark-color;
+					padding: 0 40px;
+					display: flex;
+					align-items: center;
+					transition: background-color 0.3s;
+				}
+
+				.nav-items__item:hover {
+					font-weight: normal;
+					color: $light-color;
+					background-color: $dark-color;
+				}
+
+				.nav-active {
+					color: $light-color;
+					background-color: $dark-color;
+				}
+			}
+		}
+	}
+
+	.header {
+		.hero-text {
+			h1 {
+				font-size: 2.2rem;
+			}
+
+			p {
+				font-size: 3.4rem;
+			}
+		}
+	}
+
+	.main {
+		.about-us {
+			.about-us__container {
+				flex-direction: row;
+				&--text {
+					padding: 0 3rem;
+					h3 {
+						padding-top: 0;
+						font-size: 2.4rem;
+					}
+					p {
+						line-height: 2em;
+					}
+				}
+				&--img {
+					height: 32rem;
+					width: 200%;
+				}
+			}
+		}
+	}
+
+	.offers {
+		.offers__cards {
+			flex-direction: row;
+			align-content: space-between;
+			.offers__card {
+				width: 100%;
+				margin: 2rem;
+			}
+		}
+	}
+	.contact {
+		display: flex;
+		flex-direction: row;
+		flex-wrap: wrap;
+
+		.contact__info-container {
+			min-width: 100%;
+		}
+		.contact__map,
+		.contact__form-container {
+			min-width: 50%;
+			margin-top: 4rem;
+		}
+
+		.contact__map {
+			iframe {
+				height: 56rem;
+				width: 45rem;
+			}
+		}
+
+		.contact__form-container {
+			.contact__form {
+				width: 40rem;
+				.contact__form-box {
+					textarea {
+						max-width: 40rem;
+						min-width: 40rem;
+					}
+				}
+			}
+		}
+	}
+}
+
+@media (min-width: 1200px) {
+	.nav-items__item {
+		font-size: 2.8rem;
+	}
+
+	.hero-img {
+		.hero-text {
+			h3 {
+				font-size: 2.8rem;
+				padding: 4rem 8rem;
+			}
+		}
+	}
+}
